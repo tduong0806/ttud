@@ -19,9 +19,9 @@ int hmt() {int x=0;int c=getchar(),n=0;for(;!isdigit(c);c=getchar()) n=(c=='-');
 #define bit(x,i) ((x>>(i-1))&1)
 #define onbit(x,i) (x|(1<<(i-1)))
 #define offbit(x,i) (x&~(1<<(i-1)))
-const int N=32;
+const int N=33;
 int n,m,k,dd[N];
-int x[N],cot,ans=INT_MAX;
+int x[N],cot,ans=1e9;
 struct oo {
     int u,v,w;
 };
@@ -64,7 +64,7 @@ int cp() {
 void Search() {
     Init();
     //bai cho thoi gian bao nhieu thi de cai timer<timelimit-0.1
-    while(timer<0.9) {
+    while(timer<2.9) {
         bool ok=0;
         forinc(i,1,m) if(x[i]) {
             x[i]=0;
@@ -86,7 +86,7 @@ void Search() {
     }
 }
 int main() {
-    ios_base::sync_with_stdio(false);
+    //ios_base::sync_with_stdio(false);
     //freopen("steiner-tree.inp","r",stdin);
     //neu tong do dai cac canh > INT_MAX thi define int long long, ans=1e18
     cin>>n>>m;
